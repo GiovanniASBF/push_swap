@@ -6,26 +6,36 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:22:24 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/27 17:43:39 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:54:54 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_valid_integer(char *argv)
-{
-	char	*sup;
+#include "push_swap.h"
 
-	sup = argv;
-	if (*sup == '\0')
-		return (0);
-	if (*sup == '=' || *sup == '-')
-		sup++;
-	if (*sup == '\0')
-		return (0);
-	while (*sup != '\0')
+char	**argument_unifier(char*argv[])
+{
+	int		i;
+	char	*str;
+	char	*temp;
+
+	i = 1;
+	str = ft_strdup("");
+	if (!str)
+		return (NULL);
+	while (argv[i])
 	{
-		if (*sup < '0' || *sup > '9')
-			return (0);
-		sup++;
+		temp = str;
+		str = ft_strjoin(temp, argv[i]);
+		free(temp);
+		if (!str)
+			return (NULL);
+		temp = str;
+		str = ft_strjoin(temp, " ");
+		free(temp);
+		if (!str)
+			return (NULL);
+		i++;
 	}
-	return (1);
+	return (ft_split(str, ' '));
+	free(str);
 }

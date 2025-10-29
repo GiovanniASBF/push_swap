@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 11:02:52 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:55:13 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ typedef struct s_node
 	int				index;
 	struct s_node	*next;
 }	t_node;
+
+char	**argument_unifier(char*argv[]);
 
 #endif
