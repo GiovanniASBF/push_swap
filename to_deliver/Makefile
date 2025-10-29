@@ -4,6 +4,7 @@ LIBFT = libft/libft.a
 
 SRC = entry_validate.c \
 	error_handler.c \
+	list_handler.c \
 	parser.c \
 	push_swap.c
 
