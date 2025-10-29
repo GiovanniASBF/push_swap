@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:19:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 10:18:31 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 10:37:59 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 int	main(int argc, char*argv[])
 {
 	int		i;
-	char	str;
+	char	*str;
 	char	*temp;
 
 	if (argc <= 1)
 		return (0);
-	str = '\0';
+	i = 0;
+	str = "\0";
 	while (argv[i])
 	{
 		temp = str;

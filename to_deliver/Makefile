@@ -8,15 +8,13 @@ SRC = entry_validate.c \
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
 #rules
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(eval LIBFT_OBJ := $(shell ar -t $(LIBFT)))
-	ar crs $(NAME) $(OBJ) $(addprefix libft/, $(LIBFT_OBJ))
+	$(CC) $(CFLAGS) $(OBJ) -Llibft -lft -o $(NAME)
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
