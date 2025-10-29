@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:35 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 17:18:39 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:31:14 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ void	parse_and_validate(t_list	**stack_a, int argc, char*argv[])
 		ft_lstadd_back(stack_a, node);
 		i++;
 	}
+	if (has_duplicates(stack_a))
+		handle_error(stack_a, arglist);
+	free_split_array(arglist);
 }
