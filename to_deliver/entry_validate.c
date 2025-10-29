@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:22:24 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 16:17:49 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:24:29 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,16 @@ long	ft_atol(const char *nptr)
 		nptr++;
 	}
 	return (sign * number);
+}
+
+void	free_split_array(char **args)
+{
+	int	i;
+
+	if (!args)
+		return ;
+	i = 0;
+	while (args[i])
+		free(args[i++]);
+	free (args);
 }

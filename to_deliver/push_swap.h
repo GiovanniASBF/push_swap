@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 12:29:53 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:23:11 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_node
 }	t_node;
 
 char	**argument_unifier(char*argv[]);
+void	free_split_array(char **args);
+long	ft_atol(const char *nptr);
 int		only_digits(char	**args);
 
 #endif
