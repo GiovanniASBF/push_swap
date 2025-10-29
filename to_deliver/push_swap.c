@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:19:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 11:58:17 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:18:26 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@ int	main(int argc, char*argv[])
 	char	**arglist;
 
 	if (argc <= 1)
-		return (0);
+		return (1);
 	i = 0;
 	arglist = argument_unifier(argv);
 	while (arglist[i])
 	{
 		printf("%s ", arglist[i]);
 		i++;
+	}
+	if (!only_digits(arglist))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
 	}
 }
 

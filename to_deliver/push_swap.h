@@ -6,14 +6,14 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 11:55:13 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:29:53 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "libft.h"
 
 typedef struct s_node
 {
@@ -23,5 +23,6 @@ typedef struct s_node
 }	t_node;
 
 char	**argument_unifier(char*argv[]);
+int		only_digits(char	**args);
 
 #endif
