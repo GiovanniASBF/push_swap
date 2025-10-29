@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:19:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 18:10:27 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:24:12 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,8 @@ int	main(int argc, char*argv[])
 	ft_putstr_fd("--- Test: Stack A Values ---\n", 1);
 	ft_lstiter(stack_a, &print_node_content);
 	ft_putstr_fd("----------------------------\n", 1);
+	index_list(stack_a);
+	ft_putstr_fd("--- Test: Indexed Stack A Values ---\n", 1);
+	ft_lstiter(stack_a, &print_node_content);
+	ft_putstr_fd("------------------------------------\n", 1);
 }

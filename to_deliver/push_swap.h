@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 17:53:28 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:16:47 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	free_split_array(char **args);
 long	ft_atol(const char *nptr);
 void	handle_error(t_list **stack_a, char **args);
 int		has_duplicates(t_list *head);
+void	index_list(t_list *head);
 int		only_digits(char	**args);
 void	parse_and_validate(t_list	**stack_a, char*argv[]);
 
