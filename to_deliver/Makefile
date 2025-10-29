@@ -3,6 +3,7 @@ NAME = push_swap
 LIBFT = libft/libft.a
 
 SRC = entry_validate.c \
+	parser.c \
 	push_swap.c
 
 OBJ = $(SRC:.c=.o)

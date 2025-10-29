@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 16:27:44 by gaguiar-         ###   ########.fr       */
+/*   Created: 2025/10/29 16:26:35 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/10/29 16:31:34 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft.h"
-
-typedef struct s_node
+void	parse_and_validate(t_list	**stack_a, int argc, char*argv[])
 {
-	int				number;
-	int				index;
-	struct s_node	*next;
-}	t_node;
+	char	**arglist;
+	int		i;
 
-char	**argument_unifier(char*argv[]);
-void	free_split_array(char **args);
-long	ft_atol(const char *nptr);
-int		only_digits(char	**args);
-void	parse_and_validate(t_list	**stack_a, int argc, char*argv[]);
-
-#endif
+	arglist = argument_unifier(argv);
+	if (!arglist || !only_digits(arglist))
+	{
+		free_split_array(arglist);
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
+	i = 0;
+	while (arglist[i])
+	{
+		printf("%s ", arglist[i]);
+		i++;
+	}
+}
