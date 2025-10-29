@@ -1,12 +1,14 @@
+#Variables
 NAME = push_swap
 
 LIBFT = libft/libft.a
 
-SRC = entry_validate.c \
-	error_handler.c \
+SRC = error_handler.c \
 	list_handler.c \
 	parser.c \
-	push_swap.c
+	push_swap.c \
+	utils.c \
+	test.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -23,7 +25,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	$(MAKE) -C libft
+	$(MAKE) -C libft bonus
 
 clean:
 	rm -f $(OBJ)
