@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:35 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 17:05:02 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:18:39 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	parse_and_validate(t_list	**stack_a, int argc, char*argv[])
 		n_long = ft_atol(arglist[i]);
 		if ((n_long > 2147483647) || (n_long < -2147483648))
 			handle_error(stack_a, arglist);
-		printf("%s ", arglist[i]);
+		node = fill_new_node((int)n_long);
+		if (!node)
+			handle_error(stack_a, arglist);
+		ft_lstadd_back(stack_a, node);
 		i++;
 	}
 }

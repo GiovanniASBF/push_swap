@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:19:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 16:29:21 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:21:33 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 
 int	main(int argc, char*argv[])
 {
+	char	**arglist;
+	int		i;
+	t_list	*stack_a;
+	t_list	*stack_b;
+
 	if (argc <= 1)
 		return (1);
+	stack_a = NULL;
+	stack_b = NULL;
+	// printf("%s ", arglist[i]);
 }
 
 /*
