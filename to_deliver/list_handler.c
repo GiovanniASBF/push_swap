@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:10:39 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/29 18:22:16 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:24:05 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,61 @@ t_list	*fill_new_node(int value)
 	return (new_node);
 }
 
-void	index_list(t_list *head)
+t_list	*lstdup(t_list *head)
 {
-	t_list	*reference_node;
+	t_list	*current;
+	t_list	*new_head;
+	t_list	*new_node;
+
+	new_head = NULL;
+	current = head;
+	while (current)
+	{
+		new_node = fill_new_node(*(int *)(current->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_head, &free);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_head, new_node);
+		current = current-> next;
+	}
+	return (new_head);
+}
+
+int	index_list(t_list *iter_node, int refer_val, int lst_index)
+{
+	while (iter_node)
+	{
+		if (refer_val > *(int *)(iter_node->content))
+			lst_index++;
+		iter_node = iter_node->next;
+	}
+	return (lst_index);
+}
+
+void	index_manager(t_list **head_ptr)
+{
+	t_list	*copy_head;
 	t_list	*iterator_node;
+	t_list	*reference_node;
 	int		refer_val;
 	int		lst_index;
 
-	if (!head)
+	if (!head_ptr || !*head_ptr)
 		return ;
-	reference_node = head;
+	copy_head = lstdup(*head_ptr);
+	if (!copy_head)
+		handle_error(head_ptr, NULL);
+	reference_node = *head_ptr;
 	while (reference_node)
 	{
 		refer_val = *(int *)(reference_node->content);
 		lst_index = 0;
-		iterator_node = head;
-		while (iterator_node)
-		{
-			if (refer_val > *(int *)(iterator_node->content))
-				lst_index++;
-			iterator_node = iterator_node->next;
-		}
+		iterator_node = copy_head;
+		lst_index = index_list(iterator_node, refer_val, lst_index);
 		*(int *)(reference_node->content) = lst_index;
 		reference_node = reference_node->next;
 	}
+	ft_lstclear(&copy_head, &free);
 }
