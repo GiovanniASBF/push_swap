@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:02:42 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 13:09:01 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:05:20 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ int	is_already_sorted(t_list *head)
 		current = current->next;
 	}
 	return (1);
+}
+
+void	sort2(t_list **stack_a)
+{
+	if (*(int *)((*stack_a)->content) > *(int *)((*stack_a)->next->content))
+		sa(stack_a, NULL);
 }
