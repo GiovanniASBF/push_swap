@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 12:36:21 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:50:14 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack_a, t_list **stack_b);
 void	rb(t_list **stack_a, t_list **stack_b);
+void	rra(t_list **stack_a, t_list **stack_b);
+void	rrb(t_list **stack_a, t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 void	sa(t_list **stack_a, t_list **stack_b);
 void	sb(t_list **stack_a, t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
