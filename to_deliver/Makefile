@@ -6,6 +6,7 @@ LIBFT = libft/libft.a
 SRC = error_handler.c \
 	list_handler.c \
 	parser.c \
+	printer.c \
 	push_swap.c \
 	utils.c \
 	test.c
