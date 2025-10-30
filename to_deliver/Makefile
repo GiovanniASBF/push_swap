@@ -9,6 +9,7 @@ SRC = error_handler.c \
 	printer.c \
 	pusher.c \
 	push_swap.c \
+	reverse_rotator.c \
 	rotator.c \
 	swapper.c \
 	utils.c \
