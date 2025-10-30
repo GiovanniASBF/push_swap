@@ -11,6 +11,7 @@ SRC = error_handler.c \
 	push_swap.c \
 	reverse_rotator.c \
 	rotator.c \
+	sorter.c \
 	swapper.c \
 	utils.c \
 	test.c
