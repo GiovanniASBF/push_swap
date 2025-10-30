@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swapper.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/30 11:57:39 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/10/30 12:02:07 by gaguiar-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+static void	do_swap(t_list **stack_head)
+{
+	t_list	*first;
+	t_list	*second;
+	void	*temp;
+
+	if (!stack_head || !*stack_head || !(*stack_head)->next)
+		return ;
+	first = *stack_head;
+	second = first->next;
+
+	temp = first->content;
+	first->content = second->content;
+	second->content = temp;
+}
