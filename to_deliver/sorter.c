@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:02:42 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 16:05:20 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:44:03 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,23 @@ int	is_already_sorted(t_list *head)
 
 void	sort2(t_list **stack_a)
 {
+	if (*(int *)((*stack_a)->content) > *(int *)((*stack_a)->next->content))
+		sa(stack_a, NULL);
+}
+
+void	sort3(t_list **stack_a)
+{
+	int	i_top;
+	int	i_mid;
+	int	i_bot;
+
+	i_top = *(int *)((*stack_a)->content);
+	i_mid = *(int *)((*stack_a)->next->content);
+	i_bot = *(int *)((*stack_a)->next->next->content);
+	if ((i_top > i_mid) && (i_top > i_bot))
+		ra(stack_a, NULL);
+	else if ((i_mid > i_top) && (i_mid > i_bot))
+		rra(stack_a, NULL);
 	if (*(int *)((*stack_a)->content) > *(int *)((*stack_a)->next->content))
 		sa(stack_a, NULL);
 }

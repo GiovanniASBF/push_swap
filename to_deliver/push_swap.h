@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 17:26:05 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:44:54 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		only_digits(char	**args);
 void	parse_and_validate(t_list	**stack_a, char*argv[]);
 void	print_op(char *operation);
 void	sort2(t_list **stack_a);
+void	sort3(t_list **stack_a);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack_a, t_list **stack_b);
