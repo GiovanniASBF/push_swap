@@ -7,6 +7,7 @@ SRC = error_handler.c \
 	list_handler.c \
 	parser.c \
 	printer.c \
+	pusher.c \
 	push_swap.c \
 	swapper.c \
 	utils.c \
