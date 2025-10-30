@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 11:56:32 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:10:30 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-
-typedef struct s_node
-{
-	int				number;
-	int				index;
-	struct s_node	*next;
-}	t_node;
 
 char	**argument_unifier(char*argv[]);
 t_list	*fill_new_node(int value);
@@ -32,6 +25,9 @@ void	index_list(t_list *head);
 int		only_digits(char	**args);
 void	parse_and_validate(t_list	**stack_a, char*argv[]);
 void	print_op(char *operation);
+void	sa(t_list **stack_a, t_list **stack_b);
+void	sb(t_list **stack_a, t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
 
 void	print_node_content(void *content);
 
