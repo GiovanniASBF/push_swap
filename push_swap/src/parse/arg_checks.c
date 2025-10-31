@@ -46,3 +46,25 @@ long	ft_atol(const char *nptr)
 	}
 	return (sign * number);
 }
+
+int	has_duplicates(t_list *head)
+{
+	t_list	*reference;
+	t_list	*iterator;
+	int		val_refer;
+
+	reference = head;
+	while (reference)
+	{
+		val_refer = *(int *)(reference->content);
+		iterator = reference->next;
+		while (iterator)
+		{
+			if (val_refer == *(int *)(iterator->content))
+				return (1);
+			iterator = iterator->next;
+		}
+		reference = reference->next;
+	}
+	return (0);
+}
