@@ -3,32 +3,35 @@ NAME = push_swap
 
 LIBFT = libft/libft.a
 
-SRC = error_handler.c \
-	list_handler.c \
-	main.c \
-	parser.c \
-	printer.c \
-	pusher.c \
-	reverse_rotator.c \
-	rotator.c \
-	sorter.c \
-	swapper.c \
-	utils.c \
+SRC = src/algorithm/sort_small.c \
+	src/error_mgmt/error_handler.c \
+	src/main/push_swap.c \
+	src/operations/pusher.c \
+	src/operations/swapper.c \
+	src/operations/reverse_rotator.c \
+	src/operations/rotator.c \
+	src/output/printer.c \
+	src/parse/arg_checks.c \
+	src/parse/arg_free.c \
+	src/parse/arg_unifier.c \
+	src/parse/parse_and_validate.c \
+	src/stack_utils/list_handler.c \
 	test.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ilibft
+CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -Iinclude -Ilibft
 
 #rules
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) -Llibft -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(INCLUDES) -Llibft -lft -o $(NAME)
 
-%.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
 	$(MAKE) -C libft bonus
