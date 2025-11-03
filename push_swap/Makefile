@@ -15,7 +15,8 @@ SRC = src/algorithm/sort_small.c \
 	src/parse/arg_free.c \
 	src/parse/arg_unifier.c \
 	src/parse/parse_and_validate.c \
-	src/stack_utils/list_handler.c \
+	src/stack_utils/rank.c \
+	src/stack_utils/stack_handler.c \
 	test.c
 
 OBJ = $(SRC:.c=.o)
