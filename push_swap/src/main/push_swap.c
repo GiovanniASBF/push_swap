@@ -39,7 +39,6 @@ void	sort_manager(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	(void)stack_b;
 	size = ft_lstsize(*stack_a);
 	if (is_already_sorted(*stack_a))
 	{
@@ -50,4 +49,6 @@ void	sort_manager(t_list **stack_a, t_list **stack_b)
 		sort2(stack_a);
 	else if (size == 3)
 		sort3(stack_a);
+	else if (size <= 5)
+		sort5(stack_a, stack_b, size);
 }

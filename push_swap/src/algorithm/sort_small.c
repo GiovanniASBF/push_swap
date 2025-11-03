@@ -53,3 +53,28 @@ void	sort3(t_list **stack_a)
 	if (*(int *)((*stack_a)->content) > *(int *)((*stack_a)->next->content))
 		sa(stack_a, NULL);
 }
+
+void	sort5(t_list **stack_a, t_list **stack_b, int size)
+{
+	int	low_index;
+	int	pushed_count;
+
+	low_index = size - 3;
+	pushed_count = 0;
+	while (pushed_count < low_index)
+	{
+		if (*(int *)((*stack_a)->content) < low_index)
+		{
+			pb(stack_a, stack_b);
+			pushed_count++;
+		}
+		else
+			ra(stack_a, NULL);
+	}
+	if (!is_already_sorted(*stack_a))
+		sort3(stack_a);
+	if (size == 5 && *(int *)((*stack_b)->content) < *(int *)((*stack_b)->next->content))
+		sb(stack_a, stack_b);
+	while (*stack_b)
+		pa(stack_a, stack_b);
+}
