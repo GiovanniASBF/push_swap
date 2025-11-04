@@ -33,6 +33,11 @@ int	main(int argc, char*argv[])
 	ft_lstiter(stack_a, &print_node_content);
 	ft_putstr_fd("------------------------------------\n", 1);
 	sort_manager(&stack_a, &stack_b);
+
+	ft_lstclear(&stack_a, &free);
+	ft_lstclear(&stack_b, &free);
+
+	return (0);
 }
 
 void	sort_manager(t_list **stack_a, t_list **stack_b)
