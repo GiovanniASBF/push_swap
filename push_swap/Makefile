@@ -3,7 +3,8 @@ NAME = push_swap
 
 LIBFT = libft/libft.a
 
-SRC = src/algorithm/sort_small.c \
+SRC = src/algorithm/sort_large.c \
+	src/algorithm/sort_small.c \
 	src/algorithm/sorter.c \
 	src/error_mgmt/error_handler.c \
 	src/main/push_swap.c \

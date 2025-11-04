@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:33:24 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/11/04 12:36:30 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:47:08 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	sort_manager(t_list **stack_a, t_list **stack_b)
 		sort3(stack_a);
 	else if (size <= 5)
 		sort5(stack_a, stack_b, size);
+	else
+		radix_by_bit(stack_a, stack_b, size);
 }

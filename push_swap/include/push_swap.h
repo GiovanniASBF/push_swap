@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/11/04 12:36:51 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:47:20 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		is_already_sorted(t_list *head);
 int		only_digits(char	**args);
 void	parse_and_validate(t_list	**stack_a, char*argv[]);
 void	print_op(char *operation);
+void	radix_by_bit(t_list **stack_a, t_list **stack_b, int size);
 void	sort2(t_list **stack_a);
 void	sort3(t_list **stack_a);
 void	sort5(t_list **stack_a, t_list **stack_b, int size);
