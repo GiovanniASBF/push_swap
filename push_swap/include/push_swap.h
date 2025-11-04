@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:25:36 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 17:44:54 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:36:51 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	print_op(char *operation);
 void	sort2(t_list **stack_a);
 void	sort3(t_list **stack_a);
 void	sort5(t_list **stack_a, t_list **stack_b, int size);
+void	sort_manager(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack_a, t_list **stack_b);

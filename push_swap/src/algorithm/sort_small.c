@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorter.c                                           :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:02:42 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 17:44:03 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:11:35 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	sort5(t_list **stack_a, t_list **stack_b, int size)
 	}
 	if (!is_already_sorted(*stack_a))
 		sort3(stack_a);
-	if (size == 5 && *(int *)((*stack_b)->content) < *(int *)((*stack_b)->next->content))
+	if (size == 5
+		&& *(int *)((*stack_b)->content) < *(int *)((*stack_b)->next->content))
 		sb(stack_a, stack_b);
 	while (*stack_b)
 		pa(stack_a, stack_b);

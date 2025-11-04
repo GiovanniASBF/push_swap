@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_unifier.c                                      :+:      :+:    :+:   */
+/*   sorter.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 12:32:04 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/11/04 12:32:04 by gaguiar-         ###   ########.fr       */
+/*   Created: 2025/11/04 12:33:24 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/11/04 12:36:30 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**argument_unifier(char*argv[])
+void	sort_manager(t_list **stack_a, t_list **stack_b)
 {
-	int		i;
-	char	*str;
-	char	*temp;
-	char	**result;
+	int	size;
 
-	i = 1;
-	str = ft_strdup("");
-	if (!str)
-		return (NULL);
-	while (argv[i])
+	size = ft_lstsize(*stack_a);
+	if (is_already_sorted(*stack_a))
 	{
-		temp = str;
-		str = ft_strjoin(temp, argv[i++]);
-		free(temp);
-		if (!str)
-			return (NULL);
-		temp = str;
-		str = ft_strjoin(temp, " ");
-		free(temp);
-		if (!str)
-			return (NULL);
+		ft_putstr_fd("--- Is already sorted ---\n", 1);
+		return ;
 	}
-	result = ft_split(str, ' ');
-	free(str);
-	return (result);
+	if (size == 2)
+		sort2(stack_a);
+	else if (size == 3)
+		sort3(stack_a);
+	else if (size <= 5)
+		sort5(stack_a, stack_b, size);
 }

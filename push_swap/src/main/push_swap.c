@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:19:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/10/30 17:46:28 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:34:38 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-
-void	sort_manager(t_list **stack_a, t_list **stack_b);
 
 int	main(int argc, char*argv[])
 {
@@ -38,22 +35,4 @@ int	main(int argc, char*argv[])
 	ft_lstclear(&stack_b, &free);
 
 	return (0);
-}
-
-void	sort_manager(t_list **stack_a, t_list **stack_b)
-{
-	int	size;
-
-	size = ft_lstsize(*stack_a);
-	if (is_already_sorted(*stack_a))
-	{
-		ft_putstr_fd("--- Is already sorted ---\n", 1);
-		return ;
-	}
-	if (size == 2)
-		sort2(stack_a);
-	else if (size == 3)
-		sort3(stack_a);
-	else if (size <= 5)
-		sort5(stack_a, stack_b, size);
 }
