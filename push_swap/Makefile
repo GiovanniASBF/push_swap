@@ -19,7 +19,6 @@ SRC = src/algorithm/sort_large.c \
 	src/parse/parse_and_validate.c \
 	src/stack_utils/rank.c \
 	src/stack_utils/stack_handler.c \
-	test.c
 
 OBJ = $(SRC:.c=.o)
 
