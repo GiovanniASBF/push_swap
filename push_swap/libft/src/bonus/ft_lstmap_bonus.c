@@ -17,18 +17,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_node;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
-	new_node = ft_lstnew(f(lst->content));
-	if (!new_node)
-		return (NULL);
-	lst = lst->next;
-	new_list = new_node;
+	new_list = NULL;
 	while (lst)
 	{
 		new_node = ft_lstnew(f(lst->content));
 		if (!new_node)
-			return (ft_lstdelone(new_node, del), NULL);
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
 		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
@@ -36,7 +35,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 }
 
 /*
-Why does the line 35 works:
+Why does the line 31 works:
 Since new_list is already a pointer (a variable that 
 stores the address of the first node), 
 &new_list gives me the address where new_list itself is stored.

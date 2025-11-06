@@ -24,7 +24,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -Iinclude -Ilibft
+INCLUDES = -Iinclude -Ilibft/include
 
 #rules
 all: $(NAME)
@@ -36,7 +36,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
-	$(MAKE) -C libft bonus
+	$(MAKE) -C libft
 
 clean:
 	rm -f $(OBJ)
