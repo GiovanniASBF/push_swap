@@ -23,7 +23,7 @@ SRC = src/algorithm/sort_large.c \
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = -Iinclude -Ilibft/include
 
 #rules

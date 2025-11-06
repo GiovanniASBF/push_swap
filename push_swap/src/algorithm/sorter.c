@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:33:24 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/11/04 14:47:08 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:47:00 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	sort_manager(t_list **stack_a, t_list **stack_b)
 
 	size = ft_lstsize(*stack_a);
 	if (is_already_sorted(*stack_a))
-	{
-		ft_putstr_fd("--- Is already sorted ---\n", 1);
 		return ;
-	}
 	if (size == 2)
 		sort2(stack_a);
 	else if (size == 3)
