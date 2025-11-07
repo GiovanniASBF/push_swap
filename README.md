@@ -1,4 +1,4 @@
-# 🚀 push_swap: Sorting Under Constraints
+# 🚀 push_swap
 
 The goal of this project is to sort a list of integers across two stacks (A and B) using the fewest possible operations, from a limited set of 11 instructions.
 
